@@ -31,6 +31,6 @@ public class GreetingResource {
     @Path("/new")
     public Response newData()
     {
-      Response.status(Response.Status.OK).entity("CI/CD pipeline works fine").build();
+      return Response.status(Response.Status.OK).entity("CI/CD pipeline works fine").build();
     }
 }
