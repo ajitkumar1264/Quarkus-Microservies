@@ -26,4 +26,11 @@ public class GreetingResource {
         List<UserTO> allusers=userService.getUsersI();
         return Response.status(Response.Status.OK).entity(allusers).build();
     }
+
+    @GET
+    @Path("/new")
+    public Response newData()
+    {
+       return Response.status(Response.Status.OK).entity("CI/CD pipeline works").build();
+    }
 }
