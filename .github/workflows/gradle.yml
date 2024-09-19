@@ -60,7 +60,7 @@ jobs:
    
     - name: Build Docker Image
       run: |
-        docker build -f learnquarkus3/Dockerfile.jvm -t ajitkumarvaghela/quarkus-microservice:main-${{ github.sha }} .
+        docker build -f ./learnquarkus3/Dockerfile.jvm -t ajitkumarvaghela/quarkus-microservice:main-${{ github.sha }} .
         docker tag ajitkumarvaghela/quarkus-microservice:main-${{ github.sha }} ajitkumarvaghela/quarkus-microservice:latest
 
     - name: Push Docker Image
