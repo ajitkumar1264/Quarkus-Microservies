@@ -59,7 +59,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: ajitkumarvaghela/quarkus-microservice
-        dockerfile: Dockerfile.ci
+        dockerfile: docker/Dockerfile
         registry: docker.io
         pushImage: true
         enableBuildKit: true
