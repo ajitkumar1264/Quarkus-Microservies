@@ -16,6 +16,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured'
 }
 
+// new
 group 'org.acme'
 version '1.0.0-SNAPSHOT'
 
