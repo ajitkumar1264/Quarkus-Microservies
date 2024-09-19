@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+    }
+}
+rootProject.name='learnquarkus4'
+
+
+includeBuild("../learnquarkus3")
+rootProject.buildFileName ="14193829045575506463.gradle"
