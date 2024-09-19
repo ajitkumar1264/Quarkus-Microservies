@@ -62,7 +62,7 @@ jobs:
       name: Build & push Docker image
       with:
         image: ajitkumarvaghela/quarkus-microservice
-        dockerfile: ./learnquarkus3/src/main/docker/Dockerfile.jvm
+        dockerfile: ./learnquarkus3/Dockerfile.jvm
         tags: v1, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
