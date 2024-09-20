@@ -82,7 +82,7 @@ jobs:
     - name: Check if build/quarkus-app exists
       run: ls -l ./learnquarkus3/build/quarkus-app/quarkus
 
-    - uses: mr-smithers-excellent/docker-build-push@v6
+    - uses: docker/build-push-action@v6
       name: Build & push Docker image
       with:
         image: ajitkumarvaghela/quarkusservices
