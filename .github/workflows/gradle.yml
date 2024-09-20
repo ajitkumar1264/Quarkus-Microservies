@@ -63,8 +63,9 @@ jobs:
     - name: Ensure Dockerfile is readable
       run: chmod +r ./learnquarkus3/src/main/docker/Dockerfile.jvm
 
-    - name: Check if Dockerfile exists
-      run: ls -l learnquarkus3/src/main/docker/Dockerfile.jvm
+    - name: Check if build/quarkus-app exists
+      run: ls -l learnquarkus3/build/quarkus-app/
+
 
 #    - uses: mr-smithers-excellent/docker-build-push@v5
 #      name: Build & push Docker image
