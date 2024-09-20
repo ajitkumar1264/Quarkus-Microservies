@@ -57,38 +57,29 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Check if Dockerfile exists
-      run: ls -l ./learnquarkus3/src/main/docker/Dockerfile.jvm
-
-    - name: Ensure Dockerfile is readable
-      run: chmod +r ./learnquarkus3/src/main/docker/Dockerfile.jvm
 
     - uses: actions/checkout@v4
-    - name: Set up JDK 22
+    - name: Set up JDK 22 for DockerFile
       uses: actions/setup-java@v4
       with:
           java-version: '22'
           distribution: 'temurin'
 
-    - name: Setup Gradle
+    - name: Setup Gradle fog docker
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
-    - name: Set executable permissions for gradlew
+    - name: Set executable permissions for gradlew docker
       run: chmod +x ./gradlew
 
     - name: Build with Gradle Wrapper
       run: ./gradlew :learnquarkus3:build
 
-    - name: Check if build/quarkus-app exists
-      run: ls -l ./learnquarkus3/build
-
-
-#    - uses: mr-smithers-excellent/docker-build-push@v5
-#      name: Build & push Docker image
-#      with:
-#        image: ajitkumarvaghela/quarkus-microservice
-#        dockerfile: ./learnquarkus3/src/main/docker/Dockerfile.jvm
-#        registry: docker.io
-#        username: ${{ secrets.DOCKER_USERNAME }}
-#        password: ${{ secrets.DOCKER_PASSWORD }}
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push Docker image
+      with:
+        image: ajitkumarvaghela/quarkus-microservice
+        dockerfile: ./learnquarkus3/src/main/docker/Dockerfile.jvm
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
