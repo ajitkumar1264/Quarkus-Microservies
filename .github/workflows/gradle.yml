@@ -59,7 +59,11 @@ jobs:
 
     - name: Check if Dockerfile exists
       run: ls -l ./learnquarkus3/src/main/docker/Dockerfile.jvm
-   
+
+    - name: Ensure Dockerfile is readable
+      run: chmod +r ./learnquarkus3/src/main/docker/Dockerfile.jvm
+
+
 #    - uses: mr-smithers-excellent/docker-build-push@v6
 #      name: Build & push Docker image
 #      with:
