@@ -63,6 +63,9 @@ jobs:
     - name: Ensure Dockerfile is readable
       run: chmod +r ./learnquarkus3/src/main/docker/Dockerfile.jvm
 
+    - name: Build Quarkus application
+      run: ./gradlew :learnquarkus3:build
+
     - name: Check if build/quarkus-app exists
       run: ls -l ./learnquarkus3/build/quarkus-app/
 
