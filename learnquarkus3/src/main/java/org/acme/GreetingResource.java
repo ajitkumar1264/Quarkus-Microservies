@@ -12,6 +12,6 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-         "Hello from Quarkus REST";
+        return "Hello from Quarkus REST";
     }
 }
