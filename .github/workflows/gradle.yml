@@ -80,7 +80,7 @@ jobs:
       run: ./gradlew :learnquarkus3:build
 
     - name: Check if build/quarkus-app exists
-      run: ls -l ./learnquarkus3/build/quarkus-app/
+      run: ls -l ./learnquarkus3/build/quarkus-app/quarkus
 
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
