@@ -81,14 +81,21 @@ jobs:
 
     - name: Check if build/quarkus-app exists
       run: ls -l ./learnquarkus3/build/quarkus-app/quarkus
-
-    - uses: docker/build-push-action@v6
-      name: Build & push Docker image
+    - name: Build & push Docker image
+      uses: docker/build-push-action@v6
       with:
-        image: ajitkumarvaghela/quarkusservices
-        file: ./learnquarkus3/src/main/docker/Dockerfile.jvm
         context: ./learnquarkus3
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        file: ./learnquarkus3/src/main/docker/Dockerfile.jvm
+        push: true
+        tags: ajitkumarvaghela/quarkusservices:latest
+
+#    - uses: docker/build-push-action@v6
+#      name: Build & push Docker image
+#      with:
+#        image: ajitkumarvaghela/quarkusservices
+#        file: ./learnquarkus3/src/main/docker/Dockerfile.jvm
+#        context: ./learnquarkus3
+#        registry: docker.io
+#        username: ${{ secrets.DOCKER_USERNAME }}
+#        password: ${{ secrets.DOCKER_PASSWORD }}
 
