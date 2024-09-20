@@ -76,8 +76,11 @@ jobs:
     - name: Set executable permissions for gradlew
       run: chmod +x ./gradlew
 
+    - name: Build with Gradle Wrapper
+      run: ./gradlew :learnquarkus3:build
+
     - name: Check if build/quarkus-app exists
-      run: ls -l ./learnquarkus3/build/quarkus-app/
+      run: ls -l ./learnquarkus3/build
 
 
 #    - uses: mr-smithers-excellent/docker-build-push@v5
