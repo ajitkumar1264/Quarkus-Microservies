@@ -85,7 +85,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
       with:
-        image: ajitkumarvaghela/quarkus-microservice
+        image: ajitkumarvaghela/quarkusservices
         dockerfile: ./learnquarkus3/src/main/docker/Dockerfile.jvm
         context: ./learnquarkus3
         registry: docker.io
